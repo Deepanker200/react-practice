@@ -1,7 +1,12 @@
-function App() {
+import Chai from "./chai"
 
+function App() {
   return (
-<h1>Hi, React Devs~ this side Deepanker</h1> 
+    <>
+      <Chai />
+      <h1>Chai aur react</h1>
+      <p>Para 1</p>
+    </>
   )
 }
 
