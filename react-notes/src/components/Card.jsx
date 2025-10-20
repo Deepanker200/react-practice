@@ -1,9 +1,13 @@
 
-const Card = ({props}) => {
-    {id,name}=props;
+const Card = (props) => {   
+    // console.log(props);
+    const {id,name}=props
 
   return (
-    <div>{props}</div>
+    <>
+    <div>{id}</div>
+    <div>{name}</div>
+    </>
   )
 }
 
