@@ -9,12 +9,12 @@ const Body = () => {
 
         const dataFetch = await fetch("https://api.github.com/users/Deepanker200")
         const json = await dataFetch.json();
-        console.log("Fetched JSON:", json); // ✅ check this
+        // console.log("Fetched JSON:", json); // ✅ check this
 
         setData(json)
     }
 
-    console.log("Previous:", data);
+    // console.log("Previous:", data);
 
     useEffect(() => {
         fetchData()
