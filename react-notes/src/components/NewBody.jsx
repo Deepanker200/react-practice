@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import Card from './Card';
-import NewCard from './NewCard';
+import NewCard, { withOddOnes } from './NewCard';
+import AccordionComponent from './AccordionComponent';
 
 const NewBody = () => {
     const [data, setData] = useState([]);
 
     const [color, setColor] = useState();
+    const NewCardPromoted = withOddOnes(NewCard)
 
     const buttonClicked = () => {
         console.log("Button is Clicked");
@@ -90,6 +92,31 @@ const NewBody = () => {
         }
     ];
 
+    const accordionData = [
+        {
+            id: 1,
+            title: "What is React?",
+            content: "React is a JavaScript library for building user interfaces. It lets you create reusable UI components."
+        },
+        {
+            id: 2,
+            title: "What is a Component?",
+            content: "A component is an independent, reusable piece of UI. Components can be functional or class-based."
+        },
+        {
+            id: 3,
+            title: "What is a Hook in React?",
+            content: "Hooks are special functions that let you use React features like state and lifecycle methods in functional components."
+        },
+        {
+            id: 4,
+            title: "What is Props in React?",
+            content: "Props are short for properties. They are used to pass data from parent to child components."
+        }
+    ];
+
+    const [showIndex, setShowIndex] = useState(0)
+
     if (!data || Object.keys(data).length === 0) return <p>Loading...</p>;
 
     return (
@@ -102,8 +129,23 @@ const NewBody = () => {
                 <button className="bg-slate-200 rounded p-1" onClick={buttonClicked}>Click Here!</button>
             </div>
 
-            {listOfRestaurantsJS.map((i, index) => <NewCard key={index} resData={i} />)}
-            {/* <NewCard resData={data} /> */}
+            <div className='flex justify-around'>
+                {listOfRestaurantsJS.map((i, index) => {
+                    return (index % 2 != 0 ?
+                        <NewCardPromoted key={index} resData={i} /> :
+                        <NewCard key={index} resData={i} />
+                    )
+                })}
+                {/* <NewCard resData={data} /> */}
+            </div>
+
+            {accordionData.map((i, index) => (
+                <AccordionComponent data={i}
+                    key={index}
+                    showItems={index===showIndex?true:false}
+                    setShowIndex={()=>setShowIndex(index)}
+                />
+            ))}
         </div>
     )
 }
