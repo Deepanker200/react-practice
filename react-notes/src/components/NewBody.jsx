@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import Card from './Card';
 import NewCard, { withOddOnes } from './NewCard';
 import AccordionComponent from './AccordionComponent';
+import { useDispatch } from 'react-redux';
+import { addItem } from '../utils/cartSlice';
 
 const NewBody = () => {
     const [data, setData] = useState([]);
@@ -117,6 +119,11 @@ const NewBody = () => {
 
     const [showIndex, setShowIndex] = useState(0)
 
+    const dispatch = useDispatch();
+    const handleAddItem = (i) => {
+        dispatch(addItem(i))
+    }
+
     if (!data || Object.keys(data).length === 0) return <p>Loading...</p>;
 
     return (
@@ -140,13 +147,19 @@ const NewBody = () => {
             </div>
 
             {accordionData.map((i, index) => (
-                <AccordionComponent data={i}
-                    key={index}
-                    showItems={index===showIndex?true:false}
-                    setShowIndex={()=>setShowIndex(index)}
-                />
-            ))}
+                <div>
+                    <AccordionComponent data={i}
+                        key={index}
+                        showItems={index === showIndex ? true : false}
+                        setShowIndex={() => setShowIndex(index)}
+                    />
+                    <div className='p-2 bg-green-300 rounded cursor-pointer w-[200px]' onClick={() => handleAddItem(i)}>Add Items on Cart</div>
+                </div>
+            ))
+            }
+
         </div>
+
     )
 }
 
