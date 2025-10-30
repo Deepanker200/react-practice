@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Card from './Card';
 import Button from './Button';
+import SearchBar from './SearchBar';
 import NewCard, { withOddOnes } from './NewCard';
 import AccordionComponent from './AccordionComponent';
 import { useDispatch } from 'react-redux';
@@ -159,7 +160,8 @@ const NewBody = () => {
             ))
             }
 
-<Button/>
+            <Button />
+            <SearchBar/>
         </div>
 
     )
