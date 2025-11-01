@@ -10,3 +10,4 @@
   - Redux Steps: Store->Bind the App With Provider->Slice->Action.Payload->Dispatch->Use
 - Difference between [{}] and {{}}
 - Error Element
+- Use Splice and unshift function while setting offset in live chat
