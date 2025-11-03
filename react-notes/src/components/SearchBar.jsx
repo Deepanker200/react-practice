@@ -4,6 +4,7 @@ const SearchBar = () => {
     const [searchText, setSearchText] = useState("")
 
     useEffect(() => {
+        //Debouncing
             const timer = setTimeout(() => {
                 console.log("Debounced function called: ", searchText);
             }, 200)

@@ -11,3 +11,4 @@
 - Difference between [{}] and {{}}
 - Error Element
 - Use Splice and unshift function while setting offset in live chat
+- useDeffered is just like debouncing in React
