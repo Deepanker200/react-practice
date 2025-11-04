@@ -12,3 +12,5 @@
 - Error Element
 - Use Splice and unshift function while setting offset in live chat
 - useDeffered is just like debouncing in React
+- Controlled Component- useState
+- Uncontrolled Component- useRef
