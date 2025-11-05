@@ -6,12 +6,19 @@ import NewCard, { withOddOnes } from './NewCard';
 import AccordionComponent from './AccordionComponent';
 import { useDispatch } from 'react-redux';
 import { addItem } from '../utils/cartSlice';
+import Lift1 from './Lift1';
+import Lift2 from './Lift2';
+import useCustom from './useCustom';
 
 const NewBody = () => {
     const [data, setData] = useState([]);
 
     const [color, setColor] = useState();
-    const NewCardPromoted = withOddOnes(NewCard)
+    const NewCardPromoted = withOddOnes(NewCard)        //HOC
+
+    const [lift,setLift]=useState("")
+
+    // useCustom("customHook");
 
     const buttonClicked = () => {
         console.log("Button is Clicked");
@@ -162,6 +169,16 @@ const NewBody = () => {
 
             <Button />
             <SearchBar/>
+
+            <br/>
+            <br/>
+            <br/>
+            <h1>Lift the state up</h1>
+
+            <Lift1 setLift={setLift}/>
+            <Lift2 lift={lift}/>
+
+            <h1>Custom Hook</h1>
         </div>
 
     )
