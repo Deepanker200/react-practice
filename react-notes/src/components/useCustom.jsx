@@ -2,7 +2,7 @@ import React from 'react'
 
 const useCustom = () => {
   return (
-    <div>useCustom</div>
+    <div>IT will return a piece of function</div>
   )
 }
 
