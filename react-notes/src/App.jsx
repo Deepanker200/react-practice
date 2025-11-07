@@ -5,6 +5,7 @@ import NewBody from './components/NewBody';
 import Error from "./components/Error";
 import {Provider} from "react-redux"
 import appStore from "./utils/appStore";
+import RenderedBody from "./components/RenderedBody";
 
 const appRouter = createBrowserRouter([
   {
@@ -13,7 +14,7 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <NewBody />
+        element: <RenderedBody />
       },
       {
         path: "/about",
