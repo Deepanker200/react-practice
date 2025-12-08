@@ -14,3 +14,5 @@
 - useDeffered is just like debouncing in React
 - Controlled Component- useState
 - Uncontrolled Component- useRef
+
+# Note: React Tanstack Query or React Query to be used
