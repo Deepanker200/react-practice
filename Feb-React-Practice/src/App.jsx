@@ -11,6 +11,7 @@ import Subj from './utils/ContextData';
 import { Provider } from "react-redux"
 import appStore from './utils/appStore';
 import ParentCallback from './components/ParentCallback';
+import Todo from './components/Todo';
 
 function App() {
 
@@ -50,6 +51,10 @@ function App() {
         {
           path: "/callback",
           element: <ParentCallback />
+        },
+        {
+          path: "/todo",
+          element: <Todo />
         }
       ]
     }
